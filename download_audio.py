@@ -11,7 +11,7 @@ def download_audio(csv_file):
         else:
             names[name] = 0
         url = row['target']
-        filename = f"{name}_{names[name]}.mp3" #this wont do omar_1 omar_2 itll just take the index for now can fix later but not really needed
+        filename = f"{name}_{names[name]}.mp3"
         try:
             response = requests.get(url)
             if response.status_code == 200:
