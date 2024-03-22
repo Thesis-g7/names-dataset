@@ -1,7 +1,7 @@
 import pandas as pd
 import requests
 
-def download_audio_files(csv_file):
+def download_audio(csv_file):
     names = {} 
     df = pd.read_csv(csv_file)
     for _ , row in df.iterrows():
@@ -22,4 +22,4 @@ def download_audio_files(csv_file):
                 print(f"Failed to download {filename}: {response.status_code}")
         except Exception as e:
             print(f"Error: {e}") #so program doesnt exit every time we have a little problem
-download_audio_files('names_data.csv')
+download_audio('names_data.csv')
